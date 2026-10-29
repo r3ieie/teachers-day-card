@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day</title>
+
+    <link rel="stylesheet" href="ff.css">
+</head>
+
+<body>
+
+    <!-- Small decorations -->
+    <div class="decoration pencil">✏️</div>
+    <div class="decoration apple">🍎</div>
+    <div class="decoration book">📚</div>
+
+    <!-- Main paper -->
+    <main class="paper">
+
+        <!-- Top decoration -->
+        <div class="top-line"></div>
+
+        <p class="small-text">A SPECIAL MESSAGE FOR SIR RANDY.</p>
+
+        <h1>
+            Happy Teacher's Day! 
+        </h1>
+
+        <p class="subtitle">
+            To the teacher who makes every lesson meaningful.
+        </p>
+
+
+        <!-- Teacher Photo -->
+        <div class="photo-frame">
+
+            <!--
+                PHOTO:
+                Put your photo in the same folder
+                and name it teacher.jpg
+            -->
+
+            <img src="randypogi1.jpg" alt="Teacher Photo">
+
+        </div>
+
+
+        <!-- Teacher name -->
+        <h2 class="teacher-name">
+            Thank You, Sir!
+        </h2>
+
+        <p class="teacher-subject">
+            For everything you do
+        </p>
+
+
+       
+
+
+        <!-- Button -->
+        <button id="surpriseButton">
+            📖 Open a Special Note
+        </button>
+
+
+        <!-- Hidden message -->
+        <div id="surpriseMessage" class="hidden-message">
+
+            <div class="note-paper">
+
+                <span>📌</span>
+
+                
+
+                <p>
+                    Thank you for believing in us,
+                    helping us when we struggle,
+                    and celebrating our little achievements.
+                </p>
+
+                <p>
+                    Your students will always remember
+                    the lessons and memories you gave us.
+                </p>
+
+                <h3>Happy Teacher's Day! </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- Simple music-style box -->
+        <div class="music-box">
+
+    <div class="music-icon">🎵</div>
+
+    <div class="music-info">
+        <strong>Teacher's Day Song</strong>
+        <small>Press play to listen</small>
+
+        <audio controls>
+            <source src="audio.mp4" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+    </div>
+
+</div>
+
+
+        <p class="footer-message">
+            Made with appreciation by Ryza R. Dalanon
+        </p>
+
+        <div class="bottom-line"></div>
+
+    </main>
+
+
+    <script>
+    const surpriseButton = document.getElementById("surpriseButton");
+    const surpriseMessage = document.getElementById("surpriseMessage");
+
+    surpriseButton.addEventListener("click", function () {
+
+        surpriseMessage.classList.toggle("show");
+
+        if (surpriseMessage.classList.contains("show")) {
+            surpriseButton.textContent = "📕 Close the Special Note";
+        } else {
+            surpriseButton.textContent = "📖 Open a Special Note";
+        }
+
+    });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

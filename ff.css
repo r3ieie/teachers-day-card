@@ -1,0 +1,553 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #31445a 0, transparent 25%),
+        radial-gradient(circle at 80% 70%, #24384d 0, transparent 25%),
+        #18283a;
+
+    color: #263447;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 35px 15px;
+
+    position: relative;
+}
+
+
+/* =========================
+   BACKGROUND DECORATIONS
+========================= */
+
+.decoration {
+    position: fixed;
+
+    font-size: 30px;
+
+    opacity: 0.8;
+
+    animation: float 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+.pencil {
+    left: 7%;
+    top: 20%;
+    transform: rotate(-20deg);
+}
+
+.apple {
+    right: 8%;
+    top: 30%;
+    animation-delay: 1s;
+}
+
+.book {
+    left: 10%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================
+   MAIN PAPER
+========================= */
+
+.paper {
+    width: 100%;
+    max-width: 650px;
+
+    background: #fffdf5;
+
+    padding: 45px 45px 35px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    border-top: 12px solid #d48a35;
+    border-bottom: 12px solid #d48a35;
+
+    animation: paperAppear 0.8s ease;
+}
+
+@keyframes paperAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TOP / BOTTOM LINES
+========================= */
+
+.top-line,
+.bottom-line {
+    height: 3px;
+
+    background: #23364d;
+
+    width: 80px;
+
+    margin: 0 auto 25px;
+}
+
+.bottom-line {
+    margin: 25px auto 0;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-text {
+    color: #c46f2d;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #23364d;
+
+    font-size: clamp(35px, 7vw, 58px);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #6d665c;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   TEACHER PHOTO
+========================= */
+
+.photo-frame {
+    width: 230px;
+    height: 280px;
+
+    margin: 0 auto 25px;
+
+    padding: 8px;
+
+    background: white;
+
+    border: 2px solid #d48a35;
+
+    box-shadow:
+        5px 7px 0 #23364d;
+
+    transform: rotate(-2deg);
+
+    transition: 0.3s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background: #e8e2d5;
+}
+
+
+/* =========================
+   TEACHER NAME
+========================= */
+
+.teacher-name {
+    color: #23364d;
+
+    font-size: 28px;
+
+    margin-bottom: 3px;
+}
+
+.teacher-subject {
+    color: #c46f2d;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-box {
+    background: #f4e7b8;
+
+    border-left: 5px solid #d48a35;
+
+    padding: 22px;
+
+    text-align: left;
+
+    margin-bottom: 25px;
+
+    box-shadow: 3px 4px 0 #ddd2b9;
+}
+
+.message-box p {
+    margin-bottom: 13px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.message-box p:last-of-type {
+    margin-bottom: 13px;
+}
+
+.message-box strong {
+    color: #23364d;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#surpriseButton {
+    border: none;
+
+    background: #23364d;
+
+    color: white;
+
+    padding: 14px 25px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+#surpriseButton:hover {
+    background: #c46f2d;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 0 #8f4e20;
+}
+
+
+/* =========================
+   HIDDEN NOTE
+========================= */
+
+.hidden-message {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.5s ease,
+        opacity 0.5s ease;
+
+    margin-top: 0;
+}
+
+.hidden-message.show {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+
+    margin-top: 25px;
+}
+
+.note-paper {
+    overflow: hidden;
+
+    background: #fff0a8;
+
+    padding: 0 25px;
+
+    transform: rotate(1deg);
+
+    border: 1px solid #dfc866;
+
+    box-shadow: 4px 5px 0 #d8cda9;
+}
+
+.hidden-message.show .note-paper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.note-paper span {
+    font-size: 20px;
+}
+
+.note-paper h3 {
+    color: #23364d;
+
+    margin: 10px 0;
+}
+
+.note-paper p {
+    color: #514c44;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   MUSIC BOX
+========================= */
+
+.music-box {
+    margin-top: 30px;
+
+    background: #edf0eb;
+
+    border: 1px solid #d6d8d2;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+}
+
+.music-icon {
+    font-size: 25px;
+}
+
+.music-box div:nth-child(2) {
+    flex: 1;
+}
+
+.music-box strong {
+    display: block;
+
+    color: #23364d;
+
+    font-size: 14px;
+}
+
+.music-box small {
+    color: #777;
+
+    font-size: 11px;
+}
+
+#musicButton {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #c46f2d;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#musicButton:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-message {
+    color: #777;
+
+    font-size: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 8px;
+    }
+
+    .paper {
+        padding: 35px 22px 25px;
+
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .photo-frame {
+        width: 200px;
+        height: 245px;
+    }
+
+    .message-box {
+        padding: 18px;
+    }
+
+    .message-box p {
+        font-size: 14px;
+    }
+
+    .decoration {
+        font-size: 22px;
+    }
+
+    .pencil {
+        left: 2%;
+    }
+
+    .apple {
+        right: 2%;
+    }
+
+    .book {
+        left: 3%;
+    }
+}
+ .music-info {
+    flex: 1;
+}
+
+.music-info strong {
+    display: block;
+    color: #23364d;
+    margin-bottom: 5px;
+}
+
+.music-info small {
+    display: block;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.music-info audio {
+    width: 100%;
+    height: 35px;
+}
+
+.hidden-message {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: 0.5s ease;
+    margin-top: 0;
+}
+
+.hidden-message.show {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 25px;
+}
+
+.note-paper {
+    overflow: hidden;
+    background: #fff0a8;
+    padding: 0 25px;
+    border: 1px solid #dfc866;
+    box-shadow: 4px 5px 0 #d8cda9;
+}
+
+.hidden-message.show .note-paper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
