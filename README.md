@@ -30,6 +30,10 @@ Teacher-Day/
 ├── teacher.jpg
 └── music.mp3
 
+🚀 How to Use
+
+Open the live site: 👉 https://r3ieie.github.io/teachers-day-card/ Enjoy the card animations and message.
+
 🚀 How to Run the Website
 
 1. Download or copy all project files.
